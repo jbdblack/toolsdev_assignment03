@@ -10,7 +10,6 @@ from PySide2 import QtWidgets, QtCore
 from PySide2.QtCore import Qt
 
 
-
 def maya_main_window():
     """Return the maya main window widget"""
     main_window = omui.MQtUtil.mainWindow()
@@ -47,18 +46,12 @@ class SliderBox(QtWidgets.QAbstractSlider):
         self.brick_btn = QtWidgets.QPushButton("Create Bricks")
 
     def create_layout(self):
-
+        """Lay out our widgets in the UI"""
         self.sliders_lay = QtWidgets.QFormLayout()
         self.sliders_lay.addRow(self.tr("&Height:"), self.sld_lbl_01)
         self.sliders_lay.addRow(self.ext_sld_01)
         self.sliders_lay.addRow(self.tr("&Width:"), self.sld_lbl_02)
         self.sliders_lay.addRow(self.ext_sld_02)
-        #self.sliders_lay.addRow(self.main_btn)
-
-        #self.bottom_btn_lay = QtWidgets.QHBoxLayout()
-        #elf.bottom_btn_lay.addWidget(self.main_btn)
-
-        #self.lay.addLayout(self.bottom_btn_lay)
 
         self.bottom_btn_lay = QtWidgets.QHBoxLayout()
         self.bottom_btn_lay.addWidget(self.brick_btn)
@@ -70,13 +63,11 @@ class SliderBox(QtWidgets.QAbstractSlider):
 
 
     def create_connections(self):
-        #self.ext_cmb.currentIndexChanged.connect(self._update_ext_lbl)
+        """Connect our widget signal to slots"""
         self.ext_sld_01.valueChanged.connect(self.sld_lbl_01.setNum)
         self.ext_sld_02.valueChanged.connect(self.sld_lbl_02.setNum)
         self.brick_btn.clicked.connect(self.createbricks)
 
-    #def _update_ext_lbl(self):
-        #self.ext_lbl.setText(self.ext_cmb.currentText())
 
     def slider_value(self):
         slider_val_01 = self.ext_sld_01.value()
