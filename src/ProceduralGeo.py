@@ -16,12 +16,12 @@ def maya_main_window():
     return wrapInstance(long(main_window), QtWidgets.QWidget)
 
 
-class SliderBox(QtWidgets.QAbstractSlider):
+class SliderBox(QtWidgets.QDialog): #Change from QAbstractSlider to something else (QtWidgets.QDialog)
     """"""
 
     def __init__(self):
         """Constructor"""
-        super(SliderBox, self).__init__()
+        super(SliderBox, self).__init__(parent=maya_main_window())
         self.setWindowTitle("Sliders Example")
         self.resize(800, 300)
         self.setWindowFlags(self.windowFlags() ^
