@@ -22,7 +22,7 @@ class SliderBox(QtWidgets.QDialog): #Change from QAbstractSlider to something el
     def __init__(self):
         """Constructor"""
         super(SliderBox, self).__init__(parent=maya_main_window())
-        self.setWindowTitle("Sliders Example")
+        self.setWindowTitle("Brick Wall Generator")
         self.resize(800, 300)
         self.setWindowFlags(self.windowFlags() ^
                             QtCore.Qt.WindowContextHelpButtonHint)
@@ -73,24 +73,24 @@ class SliderBox(QtWidgets.QDialog): #Change from QAbstractSlider to something el
     def create_layout(self):
         """Lay out our widgets in the UI"""
         self.sliders_lay = QtWidgets.QFormLayout()
-        self.sliders_lay.addRow(self.tr("&Row:"), self.sld_lbl_row)
+        self.sliders_lay.addRow(self.tr("&Wall Rows:"), self.sld_lbl_row)
         self.sliders_lay.addRow(self.ext_sld_row)
-        self.sliders_lay.addRow(self.tr("&Column:"), self.sld_lbl_col)
+        self.sliders_lay.addRow(self.tr("&Wall Columns:"), self.sld_lbl_col)
         self.sliders_lay.addRow(self.ext_sld_col)
 
-        self.sliders_lay.addRow(self.tr("&Bevel:"), self.sld_lbl_bvl)
+        self.sliders_lay.addRow(self.tr("&Brick Bevel:"), self.sld_lbl_bvl)
         self.sliders_lay.addRow(self.ext_sld_bvl)
 
         self.sliders_lay.addRow(self.tr("&Brick Offset:"), self.sld_lbl_offset)
         self.sliders_lay.addRow(self.ext_sld_offset)
 
-        self.sliders_lay.addRow(self.tr("&Width:"), self.sld_lbl_width)
+        self.sliders_lay.addRow(self.tr("&Brick Width:"), self.sld_lbl_width)
         self.sliders_lay.addRow(self.ext_sld_width)
 
-        self.sliders_lay.addRow(self.tr("&Height:"), self.sld_lbl_height)
+        self.sliders_lay.addRow(self.tr("&Brick Height:"), self.sld_lbl_height)
         self.sliders_lay.addRow(self.ext_sld_height)
 
-        self.sliders_lay.addRow(self.tr("&Depth:"), self.sld_lbl_depth)
+        self.sliders_lay.addRow(self.tr("&Brick Depth:"), self.sld_lbl_depth)
         self.sliders_lay.addRow(self.ext_sld_depth)
 
 
